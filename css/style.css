@@ -1,0 +1,25 @@
+:root{
+    /* colors:  */
+   --col1: #408ec6;
+   --col2: #7a2048;
+   --col3: #1e2761;
+   --col4: #8a307f;
+   --col5: #79a7d3;
+   --col6: #6883bc;
+
+
+
+}
+
+.teamOzean{
+    color: var(--col1);
+}
+
+.teamRasberry{
+    color: var(--col4);
+
+}
+
+.teamSteal{
+    color: var(--col6);
+}
