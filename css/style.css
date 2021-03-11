@@ -23,3 +23,7 @@
 .teamSteal{
     color: var(--col6);
 }
+
+.admin{
+    color: var(--col2);
+}
