@@ -30,26 +30,38 @@
             $_SESSION['team'] = $row['team_name'];
 
             //da das Foto kein Pflichtfeld ist, wird es extra abgefragt
-            if($row['employee_photo'])
+            if($row['employee_photo']){
                 $_SESSION['photo'] = $row['employee_photo'];
+            }
         }
-        
-        echo "Hallo " . $_SESSION['firstname'];
-    
-    }
-    //wenn der MA nicht vorhanden oder das PW nicht korrekt ist... 
-    else {
-        echo "<h3>Passwort and/or Username wrong!</h3>";
-        echo $employee_username . " " . $employee_pwd . "<br>";
 
+        // nachdem der User eingeloggt ist, kann er je nach "Rolle" in verschiedene Bereiche gelangen
+        
+        echo "<h2 class='welcome'> Hallo " . $_SESSION['firstname'] . "!</h2>";
+
+        // <!-- wenn sich ein MA einloggt:  -->
+        if($_SESSION['rights'] == 'employee'){
+            echo "<h3>Du befindest Dich im Team " . $_SESSION['team'] . "</h3><a href='index.php'>Hier geht's zum Mitarbeiter Bereich</a>";
+        }
+        // <!-- wenn sich ein Teamleiter einloggt:  -->
+        else if($_SESSION['rights'] == 'lead'){
+            echo "<h3>Du bist Teamleiter von Team " . $_SESSION['team'] . "</h3><a href=''>Hier geht's zu Deinem Team</a>";
+            echo "<a href=''>Hier geht's zu den freien Mitarbeitern</a>";
+        }
+        else if ($_SESSION['rights'] == 'admin'){
+            echo "<h3>Du bist als <span>admin</span> eingeloggt! <a href='mitarbeiterVerwaltung.php'>Hier geht's zu Deiner Übersicht</a></h3>";?>
+            <?php
+        }
+    }
+    //wenn der MA nicht vorhanden oder das PW nicht korrekt ist...  -->
+    else {
+    echo "<h3>Passwort and/or Username wrong!</h3>";
+    // echo $employee_username . " " . $employee_pwd . "<br>";
     }
         
         
     $select->close();
     $dbcon->close();
-
-    
-
-    ?>
+?>
 
 </main>

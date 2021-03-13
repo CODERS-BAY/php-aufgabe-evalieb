@@ -5,18 +5,35 @@ include_once('inc/header.php'); ?>
 
 <main>
 
-    <!--
-        Wenn der User nicht angemeldet ist -> LOGIN 
-        Wenn der User angemeldet ist -> sieht er seinen Teambereich inkl. Styling
-    -->
-    <!-- Login-Form -->
-    <form method="post" action="login.php" class="form_box">
-        <h2>Login</h2>
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="employee_pwd" placeholder="Password">
-        <input type="submit" value="einloggen">   
-    </form>
+<!--
+    Wenn der User nicht angemeldet ist -> LOGIN 
+    Wenn der User angemeldet ist -> sieht er seinen Teambereich inkl. Styling
+-->
+<?php
+    // wenn der Username in der Session gesetzt ist, ist der User angemeldet
+    if(isset($_SESSION['username'])){
+        include_once('inc/dbCon.php');
+        if($_SESSION['rights'] == 'employee'){
+            // echo "<h3>Hallo " . $_SESSION['firstname'] . "!</h3>";
 
+            include_once('inc/teamMessages.php');
+
+        }?>
+
+
+  
+     
+<?php }
+    else{ ?>
+        <!-- wenn der User nicht angemeldet ist, kommt das login formular:  -->
+        <!-- Login-Form -->
+        <form method="post" action="login.php" class="form_box">
+            <h2>Login</h2>
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="employee_pwd" placeholder="Password">
+            <button type="submit" value="einloggen">Einloggen</button>
+        </form>
+    <?php } ?>
 
 
 

@@ -1,29 +1,222 @@
 :root{
     /* colors:  */
-   --col1: #408ec6;
-   --col2: #7a2048;
-   --col3: #1e2761;
-   --col4: #8a307f;
+   --col0: #ecebf3;
+   --ozean: #d4e9f8;
+   --col2: #f58aba;
+   --col3: #1e2761; 
+   --col31: #1e2761dc; 
+   --rasberry: #f0d0ec;
    --col5: #79a7d3;
-   --col6: #6883bc;
+   --steal: #b9c7e7;
+}
+*{
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    vertical-align: baseline;
+    text-align: center;
+    color: var(--col3);
+}
 
-
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--col0);
 
 }
 
-.teamOzean{
-    color: var(--col1);
+span{
+    font-weight: 800;
 }
 
-.teamRasberry{
-    color: var(--col4);
+
+div{
+    display: block;
+}
+
+/*-------HEADER-------*/
+
+header{
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.Ozean header{
+    background-color: var(--ozean);
+}
+
+.Rasberry header{
+    background-color: var(--rasberry);
 
 }
 
-.teamSteal{
-    color: var(--col6);
+.Steal header{
+    background-color: var(--steal);
 }
 
-.admin{
-    color: var(--col2);
+.admin header{
+    background-color: var(--col2);
 }
+
+header ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header li{
+    list-style: none;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header li a:hover {
+    text-shadow: var(--col31);
+}
+
+li>span{
+    font-weight: 800;
+}
+
+/*-------MAIN----------*/
+main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;
+    overflow: auto;
+    /* padding: 40px; */
+    position: relative;
+}
+
+h2{
+    font-size: 150%;
+    margin: 20px auto;
+}
+
+
+/*------- FORM -----------*/
+
+input {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+}
+
+button{
+    background-color: var(--col3);
+    color: var(--col0);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+}
+
+select{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 23px;
+    align-self: center;
+}
+
+label{
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+button:hover{
+    background-color: var(--col31);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: 10px;
+}
+
+textarea{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: calc(100% / 4);
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+    width: 450px;
+    height: 100px;
+}
+
+#notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.note {
+    background-color: #fff;
+    border-color: var(--col3);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 10px;
+    width: calc(100% / 4);
+}
+
+.note > div {
+    padding: 10px;
+}
+
+.note_headline {
+    background-color: #777;
+    color: #fff;
+    font-weight: 600;
+}
+
+.Ozean .note_headline{
+    background-color: var(--ozean);
+    color: var(--col3);
+}
+
+.Rasberry .note_headline{
+    background-color: var(--rasberry);
+    color: var(--col3);
+}
+
+.Steal .note_headline{
+    background-color: var(--steal);
+    color: var(--col3);
+}
+
+
