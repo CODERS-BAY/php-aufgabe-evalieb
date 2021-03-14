@@ -81,4 +81,11 @@ $(document).ready(function(){
         });
     });
 
+    function deleteForSure(user){
+        let check = confirm("Wollen Sie " + user + " wirklich löschen?");
+            if (check == false) {
+            history.back();
+        }
+    } 
+
 });
