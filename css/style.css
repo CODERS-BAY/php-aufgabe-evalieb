@@ -154,6 +154,18 @@ button:hover{
     background-color: var(--col31);
 }
 
+.button, input[type="submit"] {
+    color: #fff;
+    background-color: #777;
+    border: none;
+    padding: 10px;
+}
+
+.button:hover, input[type="submit"]:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
 form{
     display: flex;
     flex-direction: column;
@@ -192,6 +204,7 @@ textarea{
     padding: 0px;
     margin: 10px;
     width: calc(100% / 4);
+    position: relative;
 }
 
 .note > div {
@@ -202,7 +215,16 @@ textarea{
     background-color: #777;
     color: #fff;
     font-weight: 600;
+    text-align: left;
 }
+
+.delete{
+    position: absolute;
+    top: 0; 
+    right: 0; 
+    
+}
+
 
 .Ozean .note_headline{
     background-color: var(--ozean);

@@ -27,11 +27,10 @@
             <div data-id="<?php echo $row['note_id']; ?>" class="note">
                 <div class="note_headline"><?php echo $row['employee_firstname'] . " " . $row['employee_lastname']; ?></div>
                 <div class="note_text"><?php echo $row['note_text']; ?></div>
-
                 <!-- Eintrag darf nur vom Teamleiter  gelöscht werden -->
-                <?php if($_SESSION['rights'] == 'lead'){
-                        echo '<div class="button delete">Löschen</div>';
-                        } ?>
+                <?php if($_SESSION['rights'] == 'lead'){?>
+                    <div class="button delete">Löschen</div>
+                <?php    } ?>
             </div>
         <?php }
         echo "</div>";

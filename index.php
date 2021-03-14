@@ -13,16 +13,11 @@ include_once('inc/header.php'); ?>
     // wenn der Username in der Session gesetzt ist, ist der User angemeldet
     if(isset($_SESSION['username'])){
         include_once('inc/dbCon.php');
-        if($_SESSION['rights'] == 'employee'){
+        if($_SESSION['rights'] == 'employee' || $_SESSION['rights'] == 'lead'){
             // echo "<h3>Hallo " . $_SESSION['firstname'] . "!</h3>";
-
             include_once('inc/teamMessages.php');
 
         }?>
-
-
-  
-     
 <?php }
     else{ ?>
         <!-- wenn der User nicht angemeldet ist, kommt das login formular:  -->

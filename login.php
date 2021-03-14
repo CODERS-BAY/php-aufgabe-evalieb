@@ -41,17 +41,19 @@
 
         // <!-- wenn sich ein MA einloggt:  -->
         if($_SESSION['rights'] == 'employee'){
-            echo "<h3>Du befindest Dich im Team " . $_SESSION['team'] . "</h3><a href='index.php'>Hier geht's zum Mitarbeiter Bereich</a>";
-        }
+            echo "<h3>Du befindest Dich im Team " . $_SESSION['team'];?> </h3>
+            <h3><a href='index.php'>Hier geht's zum internen Mitarbeiter Bereich</a></h3>
+        <?php }
         // <!-- wenn sich ein Teamleiter einloggt:  -->
         else if($_SESSION['rights'] == 'lead'){
-            echo "<h3>Du bist Teamleiter von Team " . $_SESSION['team'] . "</h3><a href=''>Hier geht's zu Deinem Team</a>";
-            echo "<a href=''>Hier geht's zu den freien Mitarbeitern</a>";
-        }
-        else if ($_SESSION['rights'] == 'admin'){
-            echo "<h3>Du bist als <span>admin</span> eingeloggt! <a href='mitarbeiterVerwaltung.php'>Hier geht's zu Deiner Übersicht</a></h3>";?>
-            <?php
-        }
+            echo "<h3>Du bist Teamleiter von Team " . $_SESSION['team']?> </h3>
+                <h3><a href='index.php'>Hier geht's zum Mitarbeiter Bereich</a></h3>
+                <h3><a href=''>Hier geht's zu Deinem Team</h3></a>
+                <h3><a href=''>Hier geht's zu den freien Mitarbeitern</a></h3>
+        <?php }
+        else if ($_SESSION['rights'] == 'admin'){?>
+            <h3>Du bist als <span>admin</span> eingeloggt! <a href='mitarbeiterVerwaltung.php'>Hier geht's zu Deiner Übersicht</a></h3>
+        <?php }
     }
     //wenn der MA nicht vorhanden oder das PW nicht korrekt ist...  -->
     else {
