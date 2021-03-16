@@ -1,20 +1,23 @@
 <h2>Nachricht an Team <span><?php echo $_SESSION['team'];?></span> senden</h2>
 <form class="form-box" id="newMessage">
     <input type="hidden" value="<?php echo $_SESSION['team'];?>">
-    <input type="hidden" value="<?php echo $_SESSION['username'];?>">
+    <input type="hidden" value="<?php echo $_SESSION['employee_ID'];?>">
     <input type="hidden" name="messageID" value="">
     <textarea name="text" placeholder="Meine Nachricht" id="newMsg"></textarea>
-    <button type="submit">Nachricht absenden</button>
-    
-    <!-- //TODO wäre schön, wenn man auf den Abbrechen Button drückt und der Text wieder weg ist -->
-    <!-- <button type="cancel">abbrechen</button> -->
+    <div class="row">
+        <div class="col-1"></div>
+        <button class="col-4" type="submit">Nachricht absenden</button>
+        <div class="col-2"></div>
+        <button class="col-4" type="reset">Inhalt leeren</button>
+        <div class="col-1"></div>   	
+    </div>
 </form>
 
 <h2>Meine Team-Nachrichten</h2>
 <?php
     $teamName = $_SESSION['team'];
-    $sql = "SELECT `notes`.*, `employee`.`employee_firstname`, `employee`.`employee_lastname` FROM `notes` LEFT JOIN `employee` ON `notes`.`note_username` = `employee`.`employee_username` 
-    WHERE notes.team_name = '$teamName'";
+    $sql = "SELECT `notes`.*, `employee`.`employee_firstname`, `employee`.`employee_lastname` FROM `notes` LEFT JOIN `employee` ON `notes`.`employee_ID` = `employee`.`employee_ID` 
+    WHERE employee.team_name = '$teamName'";
     $result = $dbcon->query($sql);
 
     // echo var_dump($result);

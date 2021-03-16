@@ -1,6 +1,6 @@
 <?php 
 $title = "Admin-Bereich";
-include('inc/dbCon.php');
+include('../inc/dbCon.php');
 /*select -> zuerst mal fragen, ob der username vorhanden ist*/
 $select = "SELECT * FROM employee WHERE employee_username ='" . $_POST['username'] . "'";
 

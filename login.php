@@ -6,7 +6,7 @@
 <main>
 <?php
     include_once('inc/dbCon.php');
-    $select = $dbcon->prepare("SELECT employee_username, employee_firstname, employee_lastname, employee_photo, employee_email,
+    $select = $dbcon->prepare("SELECT employee_ID, employee_username, employee_firstname, employee_lastname, employee_photo, employee_email,
                                     rights_name, team_name
                                     FROM employee
                                     WHERE employee_pwd = ? AND employee_username = ?");
@@ -22,6 +22,7 @@
     if($result->num_rows > 0){
         //MA einloggen
         while($row = $result->fetch_assoc()){
+            $_SESSION['employee_ID'] = $row['employee_ID'];
             $_SESSION['username'] = $row['employee_username'];
             $_SESSION['firstname'] = $row['employee_firstname'];
             $_SESSION['lastname'] = $row['employee_lastname'];
@@ -48,8 +49,8 @@
         else if($_SESSION['rights'] == 'lead'){
             echo "<h3>Du bist Teamleiter von Team " . $_SESSION['team']?> </h3>
                 <h3><a href='index.php'>Hier geht's zum Mitarbeiter Bereich</a></h3>
-                <h3><a href=''>Hier geht's zu Deinem Team</h3></a>
-                <h3><a href=''>Hier geht's zu den freien Mitarbeitern</a></h3>
+                <h3><a href='teamMembers.php'>Hier geht's zu Deinem Team</h3></a>
+                <h3><a href='employees.php'>Hier geht's zu den freien Mitarbeitern</a></h3>
         <?php }
         else if ($_SESSION['rights'] == 'admin'){?>
             <h3>Du bist als <span>admin</span> eingeloggt! <a href='mitarbeiterVerwaltung.php'>Hier geht's zu Deiner Übersicht</a></h3>

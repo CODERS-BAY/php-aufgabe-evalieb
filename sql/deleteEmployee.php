@@ -1,10 +1,9 @@
 <?php
-include_once('inc/dbCon.php'); //wenn noch nicht geöffnet
+include_once('../inc/dbCon.php'); //wenn noch nicht geöffnet
 
-$messageID = $_POST['noteID'];
+$employee_ID = $_POST['employee_id'];
 
-$delete = "DELETE FROM `notes` WHERE `notes`.`note_id` = '$messageID'"; 
-
+$delete = "DELETE FROM `employee` WHERE `employee_ID` =" . $_POST['employee_id'] . ";";
 
     //Select statement ausführen
     if($dbcon->query($delete)){
@@ -17,5 +16,3 @@ $delete = "DELETE FROM `notes` WHERE `notes`.`note_id` = '$messageID'";
      $dbcon->close();
  
  ?>
-
-?>

@@ -11,7 +11,11 @@
 
     <!-- font awesome  -->
     <link href="css/css/all.css" rel="stylesheet">
-    <title><?php echo $title;?> </title>
+    <title><?php 
+        if($title){
+           echo $title;
+        }else { echo "Mitgliederverwaltung";} ?> 
+     </title>
 </head>
 <?php    
     $class= "";
@@ -26,14 +30,22 @@
 
         <header>
             <ul>
-                <li>Willkommen im Team <span><?php echo $class; ?></span>, <?php echo $_SESSION['firstname'] ?>!</li>
+                <li>Willkommen im Team <span><?php echo $class; ?></span>,
+                <?php if($_SESSION['rights'] == 'lead' ){ echo "du bist Teamleiter, "; } 
+                        echo $_SESSION['firstname'] ?>!</li>
                 <?php if($_SESSION['rights'] == 'admin' ) { ?>
-                    <li><a href="mitarbeiterVerwaltung.php">Mitarbeiterverwaltung</a></li>
-                    <?php } ?>
+                        <li><a href="mitarbeiterVerwaltung.php">Mitarbeiterverwaltung</a></li>
+                        <li><a href="newEmployeeForm.php">Neuen Mitarbeiter anlegen</a></li>
+                        <?php } 
+                    else if($_SESSION['rights'] == 'lead' ) {?>
+                        <li><a href="index.php">Nachrichten</a></li>
+                        <li><a href="teamMembers.php">Meine Mitarbeiter</a></li>
+                        <?php }?>
             </ul>
             <ul>
                 <?php if($_SESSION['rights'] == 'employee' || $_SESSION['rights'] == 'lead'){?>
-                <li><a href="userProfil.php"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="index.php">Nachrichten</a></li>
+                    <li><a href="userProfil.php"><i class="fas fa-user-circle"></i></a></li>
                 <?php
                     }
                 ?>

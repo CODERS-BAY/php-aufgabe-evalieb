@@ -8,7 +8,7 @@
                 <th class="col-2">Nachname</th>
                 <th class="col-2">Rolle</th>
                 <th class="col-2">Team</th>
-                <!-- bleibt leer für den löschen button -->
+                <!-- bleibt leer für den bearbeiten button -->
                 <th class="col-2"> </th>
             </tr>
         </thead>
@@ -28,13 +28,11 @@
                 <form class="deleteEmployee formular">
                     <tr class='row noBreak'>
                         <td class='col-2'><input class='inTD' name='user_Name' value="<?php echo $username ?>" disabled></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_firstname ?>" disabled></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_lastname ?>" disabled></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->rights_name ?>" disabled></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->team_name ?>" disabled></td>
-                        <?php if($_SESSION['rights'] == 'admin'){?>
-                            <td class='col-2'><input type='submit' class='inTD' value='löschen'> </td>
-                        <?php } ?>
+                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_firstname ?>" ></td>
+                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_lastname ?>" ></td>
+                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->rights_name ?>" ></td>
+                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->team_name ?>" ></td>
+                        <td class='col-2'><input type='submit' class='inTD' value='Bearbeiten'> </td>
                         <input name="employee_id" value="<?php echo $datensatz->employee_ID ?>" type="hidden">
                     </tr>
                 </form>

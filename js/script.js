@@ -9,7 +9,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             data : $(this).serialize(),
-            url : 'newEmployee.php',
+            url : 'sql/newEmployee.php',
             success : function(phpArray){
                 console.log(JSON.parse(phpArray));
 
@@ -39,12 +39,13 @@ $(document).ready(function(){
         $.ajax({
             type : 'post',
             data : formData, 
-            url : 'newMessage.php',
+            url : 'sql/newMessage.php',
             success : function(phpData){
                 console.log(phpData);
 
                 if(phpData.trim() == 'true'){
                     location.reload();
+                    console.log("its working!");
                 }
 
             }, 
@@ -67,7 +68,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post', 
             data : myData, 
-            url : 'deleteMessage.php',
+            url : 'sql/deleteMessage.php',
             success : function(phpData){ //Parameter der mitgegeben wird! 
                 console.log(phpData);
 
@@ -87,5 +88,62 @@ $(document).ready(function(){
             history.back();
         }
     } 
+
+    $('.deleteEmployee').submit(function(event){
+        event.preventDefault();
+        console.log('Mitarbeiter löschen');
+        /*
+        next stepp: formular Daten  holen
+        */
+        let formData = $(this).serialize();
+        deleteEmployee(formData);
+    });
+
+    function deleteEmployee(formData){
+        $.ajax({
+            type : 'post', 
+            data : formData, 
+            url : 'sql/deleteEmployee.php',
+            success : function(phpData){
+                console.log(phpData);
+
+                if(phpData.trim() == 'true'){
+                    location.reload();
+                }
+            },
+            error : function(errorMsg){
+                console.log(errorMsg);
+            }
+        });
+    }
+
+    $('.deleteFromTeam').submit(function(event){
+        event.preventDefault();
+        console.log('Mitarbeiter aus Team entfernen');
+        /*
+        next stepp: formular Daten  holen
+        */
+        let formData = $(this).serialize();
+        deleteFromTeam(formData);
+    });
+
+    function deleteFromTeam(formData){
+        $.ajax({
+            type : 'post', 
+            data : formData, 
+            url : 'sql/deleteEmployee.php',
+            success : function(phpData){
+                console.log(phpData);
+
+                if(phpData.trim() == 'true'){
+                    location.reload();
+                }
+            },
+            error : function(errorMsg){
+                console.log(errorMsg);
+            }
+        });
+    }
+
 
 });

@@ -133,7 +133,7 @@ button{
 }
 
 select{
-    background-color: #fff;
+    background-color: --var(--col0);
     border-radius: 4px;
     box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
     box-sizing: border-box;
@@ -152,14 +152,14 @@ label{
 }
 
 .button, input[type="submit"], input[type="edit"] {
-    color: #fff;
+    color: var(--col0);
     background-color: var(--col3);
     border: none;
     padding: 10px;
     text-align: center;
 }
 
-.button:hover, input[type="submit"]:hover, input[type="edit"]:hover {
+button:hover .button:hover, input[type="submit"]:hover, input[type="edit"]:hover {
     background-color: var(--col31);
     cursor: pointer;
 }
@@ -201,10 +201,24 @@ textarea{
     height: 100px;
 }
 
+.Ozean textarea{
+    background-color: var(--ozean);
+}
+
+.Rasberry textarea{
+    background-color: var(--rasberry);
+}
+
+.Steal textarea{
+    background-color: var(--steal);
+}
+
+
 #notes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-width: -webkit-fill-available;
 }
 
 .note {
@@ -223,26 +237,31 @@ textarea{
     padding: 10px;
 }
 
+.note_text{
+    min-height: 50px;
+}
+
 .note_headline {
     background-color: #777;
-    color: #fff;
+    color: var(--col0);
     font-weight: 600;
     text-align: left;
 }
 
-.delete, .edit{
+/* .delete, .edit{
     position: absolute;
     top: 0; 
     right: 0; 
-    
-}
+} */
 label{
     size: 1.5rem;
 }
 
 caption{
-    size: 2em;
-    margin: 10px; 
+    size: 3em;
+    margin: 20px; 
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
 /*----------TABLES--------*/
@@ -280,6 +299,7 @@ th{
 td{
     font-size: 14px;
     vertical-align: bottom;
+    height: 40px;
 } 
 
 td > input, td{
@@ -289,9 +309,11 @@ td > input, td{
     font-size: 14px;
     font-family: 'Quicksand', sans-serif;
     width: 120px;
-    
 }
 
+.editBtn{
+    width: 200px;
+}
 
 .Ozean .note_headline{
     background-color: var(--ozean);
