@@ -131,7 +131,7 @@ $(document).ready(function(){
         $.ajax({
             type : 'post', 
             data : formData, 
-            url : 'sql/deleteEmployee.php',
+            url : 'sql/deleteEmployeeFromTeam.php',
             success : function(phpData){
                 console.log(phpData);
 
@@ -144,6 +144,37 @@ $(document).ready(function(){
             }
         });
     }
+
+    $('.addEmployeeToTeam').submit(function(event){
+        event.preventDefault();
+        console.log('Team hinzufügen');
+        /*
+        next stepp: formular Daten  holen
+        */
+        let formData = $(this).serialize();
+        addEmployeetoTeam(formData);
+    });
+
+    function addEmployeetoTeam(formData){
+        $.ajax({
+            type : 'post',
+            data : formData, 
+            url : 'sql/addEmployeeToTeam.php',
+            success : function(phpData){
+                console.log(phpData);
+
+                if(phpData.trim() == 'true'){
+                    location.reload();
+                    console.log("its working!");
+                }
+
+            }, 
+            error : function(errorMassage){
+                console.log(errorMassage);
+            }
+        });
+    }
+
 
 
 });

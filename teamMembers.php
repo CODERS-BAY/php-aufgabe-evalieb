@@ -11,7 +11,7 @@ include_once('inc/header.php');?>
                 <th class="col-2">Vorname</th>
                 <th class="col-2">Nachname</th>
                 <th class="col-2">Rolle</th>
-                <!-- bleibt leer für den löschen button -->
+                <!-- bleibt leer für den aus Team entfernen- button -->
                 <th class="col-4"> </th>
             </tr>
         </thead>
@@ -47,5 +47,6 @@ include_once('inc/header.php');?>
             ?> 
         </tbody> 
     </table> 
+    <?php include_once('inc/employeesNoTeam.php');?>
 </div>
 <?php include_once('inc/footer.php') ?>

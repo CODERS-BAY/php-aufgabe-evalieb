@@ -34,17 +34,22 @@
                 <?php if($_SESSION['rights'] == 'lead' ){ echo "du bist Teamleiter, "; } 
                         echo $_SESSION['firstname'] ?>!</li>
                 <?php if($_SESSION['rights'] == 'admin' ) { ?>
-                        <li><a href="mitarbeiterVerwaltung.php">Mitarbeiterverwaltung</a></li>
-                        <li><a href="newEmployeeForm.php">Neuen Mitarbeiter anlegen</a></li>
-                        <?php } 
-                    else if($_SESSION['rights'] == 'lead' ) {?>
-                        <li><a href="index.php">Nachrichten</a></li>
-                        <li><a href="teamMembers.php">Meine Mitarbeiter</a></li>
-                        <?php }?>
+                    <li><a href="mitarbeiterVerwaltung.php">Mitarbeiterverwaltung</a></li>
+                    <li><a href="newEmployeeForm.php">Neuen Mitarbeiter anlegen</a></li>
+                    <?php } 
+                else if($_SESSION['rights'] == 'lead' ) {?>
+                    <li><a href="index.php">Nachrichten</a></li>
+                    <li><a href="teamMembers.php">Mitarbeiter</a></li>
             </ul>
             <ul>
-                <?php if($_SESSION['rights'] == 'employee' || $_SESSION['rights'] == 'lead'){?>
+               <li><a href="userProfil.php"><i class="fas fa-user-circle"></i></a></li>
+
+            <?php }?>
+                <?php if($_SESSION['rights'] == 'employee') {?>
+        
                     <li><a href="index.php">Nachrichten</a></li>
+            </ul>
+            <ul>
                     <li><a href="userProfil.php"><i class="fas fa-user-circle"></i></a></li>
                 <?php
                     }
