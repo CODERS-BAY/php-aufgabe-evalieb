@@ -175,6 +175,62 @@ $(document).ready(function(){
         });
     }
 
+    $('#changePwd').submit(function(event){
+        event.preventDefault();
+        console.log('Passwort ändern');
+        /*
+        next stepp: formular Daten  holen
+        */
+        let formData = $(this).serialize();
+        changeUserPwd(formData);
+    });
+
+    function changeUserPwd(formData){
+        $.ajax({
+            type : 'post',
+            data : formData, 
+            url : 'sql/changePwd.php',
+            success : function(phpData){
+                console.log(phpData);
+
+                if(phpData.trim() == 'true'){
+                    location.reload();
+                    console.log("its working!");
+                }
+
+            }, 
+            error : function(errorMassage){
+                console.log(errorMassage);
+            }
+        });
+    }
+
+    // $('#changeProfil').submit(function(event){
+    //     event.preventDefault();
+    //     console.log('Foto hinzufügen');
+    //     let image = $(this).serialize();
+    //     changeProfil(image);
+    // });
+
+    // function changeProfil(image){
+    //     $.ajax({
+    //         type : 'post',
+    //         data : image,
+    //         url: 'sql/updateUser.php',
+    //         success : function(phpData){
+    //             console.log(phpData);
+
+    //             if(phpData.trim() == 'true'){
+    //                 location.reload();
+    //                 console.log("yeah");
+    //             }
+    //         },
+    //         error : function(errorMessage){
+    //             console.log(errorMessage);
+    //             }  
+    //     });
+    // }
+
 
 
 });

@@ -50,9 +50,15 @@
                     <li><a href="index.php">Nachrichten</a></li>
             </ul>
             <ul>
+            <?php if(isset($_SESSION['photo'])){?>
+
+                    <li><a href="userProfil.php"><div class="userimage" style="background-image: url(<?php echo $_SESSION['photo']?>"></div></a></li>
+                    <?php }
+                    else { ?>
                     <li><a href="userProfil.php"><i class="fas fa-user-circle"></i></a></li>
                 <?php
                     }
+                }
                 ?>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
