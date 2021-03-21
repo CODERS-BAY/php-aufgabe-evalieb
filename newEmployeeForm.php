@@ -36,9 +36,9 @@ include_once('inc/dbCon.php');?>
             <label for="team_name"  class="col-6">Team</label>
             <select name="team_name"  class="col-6">
                 <option value="">keines</option>
-                <option value="Ozean">Ozean</option>
-                <option value="Rasberry">Himbeere</option>
-                <option value="Steal">Stahl</option>
+                <option value="Horizon">Horizon</option>
+                <option value="Rasberry">Rasberry</option>
+                <option value="Steal">Steal</option>
             </select>
         </div>
         <div class="row">

@@ -16,7 +16,7 @@
             <?php 
                 include('dbCon.php');
                 //sql Statement in Variable speichern:
-                $sql = "SELECT employee_ID, `employee_username`,`employee_firstname`,`employee_lastname`,`rights_name`,`team_name` FROM employee";
+                $sql = "SELECT employee_ID, `employee_username`,`employee_firstname`,`employee_lastname`,`rights_name`,`team_name`,`employee_email`,employee_pwd FROM employee";
 
                 $result = $dbcon->query($sql);
                 // var_dump($result);
@@ -25,15 +25,17 @@
                 $username = $datensatz->employee_username;?>
 
                 <!-- <form class='formular deleteEmployee' onsubmit='return deleteForSure("<?php echo $username ?>")'> -->
-                <form class="deleteEmployee formular">
+                <form class="updateEmployee formular" action="updateEmployeeForm.php" method="post">
                     <tr class='row noBreak'>
-                        <td class='col-2'><input class='inTD' name='user_Name' value="<?php echo $username ?>" disabled></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_firstname ?>" ></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_lastname ?>" ></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->rights_name ?>" ></td>
-                        <td class='col-2'><input class='inTD' value="<?php echo $datensatz->team_name ?>" ></td>
+                        <td class='col-2'><input name="username"class='inTD'  value="<?php echo $username?>" ></td>
+                        <td class='col-2'><input name="firstname" class='inTD' value="<?php echo $datensatz->employee_firstname ?>" ></td>
+                        <td class='col-2'><input name ="lastname" class='inTD' value="<?php echo $datensatz->employee_lastname ?>" ></td>
+                        <td class='col-2'><input name="rights" class='inTD' value="<?php echo $datensatz->rights_name ?>" ></td>
+                        <td class='col-2'><input name="team" class='inTD' value="<?php echo $datensatz->team_name ?>" ></td>
                         <td class='col-2'><input type='submit' class='inTD' value='Bearbeiten'> </td>
                         <input name="employee_id" value="<?php echo $datensatz->employee_ID ?>" type="hidden">
+                        <input name="employee_email" value="<?php echo $datensatz->employee_email ?>" type="hidden">
+                        <input name="employee_pwd" value="<?php echo $datensatz->employee_pwd ?>" type="hidden">
                     </tr>
                 </form>
             <?php }

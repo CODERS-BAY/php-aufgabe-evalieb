@@ -6,20 +6,24 @@
 -->EL: zusätzlich wurde noch eine ID vergeben (wie kann ich einen Datensatz ohne ID löschen - hab es nicht geschafft)
 
 ### Rechte: Admin, Teamleiter oder Mitarbeiter 
--->admin, lead und employee
+-->admin, lead und employee  -->done
 
 ### Mitarbeiter können ihr eigenes Profil updaten
-!TODO Foto hochladen, austauschen, //TO ASK Passwort ändern?? 
+Foto hochladen, austauschen --> allerdings kann nur 1 Foto gespeichert werden  
+ Passwort ändern?? -->done
 
 ### Teamleiter darf zusätzlich Mitarbeiter aus seinem Team herausnehmen oder bestehende Mitarbeiter in seine Gruppe hinzufügen (ein Mitarbeiter kann immer nur in einem Team sein)
 --> der Teamleiter sieht seine MA und alle freien MA
+-->done
 ### der Mitarbeiter muss vorher frei von einem Team sein, damit ihn ein anderer Teamleiter in sein Team aufnehmen kann
 --> done
 
 ### Überlege dir einen Teamnamen und gestalte die Webseite (Farben / Hintergrund) je nach Team
 --> done
 
-### Admin darf alle Mitarbeiter löschen (-->done), verändern(//TODO) und neue Mitarbeiter (-->done) anlegen
+### Admin darf alle Mitarbeiter löschen (-->done), verändern(-->done 
+<!-- AUSSER: PWD ändern -->
+) und neue Mitarbeiter (-->done) anlegen
 ### EL: Fotos können nur vom MA selbst hinzugefügt werden
 
 <!-- # Löscht ein Admin einen Mitarbeiter, so wird dieser per Mail darüber informiert -->
@@ -31,7 +35,7 @@
 ## sein Bild 
 -->done
 ## und den Profiländerungsbutton
--->still TODO
+-->done
 ## Man kann sich ausloggen
 --> done
 ## Auf der Startseite sieht man zusätzlich in welchem Team man sich befindet.

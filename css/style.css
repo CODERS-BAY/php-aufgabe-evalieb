@@ -1,7 +1,7 @@
 :root{
     /* colors:  */
    --col0: #ecebf3;
-   --ozean: #d4e9f8;
+   --horizon: #d4e9f8;
    --col2: #f58aba;
    --col3: #1e2761; 
    --col31: #1e2761dc; 
@@ -45,8 +45,8 @@ header{
     padding: 20px;
 
 }
-.Ozean header{
-    background-color: var(--ozean);
+.Horizon header{
+    background-color: var(--horizon);
 }
 
 .Rasberry header{
@@ -159,6 +159,12 @@ label{
     font-weight: 600;
 }
 
+fieldset input{
+    text-align: left;
+    background-color: #1e2761;
+
+}
+
 .button, input[type="submit"], input[type="edit"] {
     color: var(--col0);
     background-color: var(--col3);
@@ -209,8 +215,8 @@ textarea{
     height: 100px;
 }
 
-.Ozean textarea{
-    background-color: var(--ozean);
+.Horizon textarea{
+    background-color: var(--horizon);
 }
 
 .Rasberry textarea{
@@ -324,8 +330,8 @@ td > input, td{
     width: 200px;
 }
 
-.Ozean .note_headline{
-    background-color: var(--ozean);
+.Horizon .note_headline{
+    background-color: var(--horizon);
     color: var(--col3);
 }
 

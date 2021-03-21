@@ -205,31 +205,31 @@ $(document).ready(function(){
         });
     }
 
-    // $('#changeProfil').submit(function(event){
-    //     event.preventDefault();
-    //     console.log('Foto hinzufügen');
-    //     let image = $(this).serialize();
-    //     changeProfil(image);
-    // });
+    $('#alterEmployee').submit(function(event){
+        event.preventDefault();
+        console.log('Mitarbeiter bearbeiten');
+        let formdata = $(this).serialize();
+        updateEmployee(formdata);
+    });
 
-    // function changeProfil(image){
-    //     $.ajax({
-    //         type : 'post',
-    //         data : image,
-    //         url: 'sql/updateUser.php',
-    //         success : function(phpData){
-    //             console.log(phpData);
+    function updateEmployee(formdata){
+        $.ajax({
+            type : 'post',
+            data : formdata,
+            url: 'sql/updateEmployee.php',
+            success : function(phpData){
+                console.log(phpData);
 
-    //             if(phpData.trim() == 'true'){
-    //                 location.reload();
-    //                 console.log("yeah");
-    //             }
-    //         },
-    //         error : function(errorMessage){
-    //             console.log(errorMessage);
-    //             }  
-    //     });
-    // }
+                if(phpData.trim() == 'true'){
+                    // location.reload();
+                    console.log("yeah");
+                }
+            },
+            error : function(errorMessage){
+                console.log(errorMessage);
+                }  
+        });
+    }
 
 
 
