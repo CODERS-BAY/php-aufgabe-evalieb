@@ -37,7 +37,7 @@ include_once('inc/dbCon.php');?>
             <select name="team_name"  class="col-6">
                 <option value="">keines</option>
                 <option value="Horizon">Horizon</option>
-                <option value="Rasberry">Rasberry</option>
+                <option value="Raspberry">Raspberry</option>
                 <option value="Steal">Steal</option>
             </select>
         </div>

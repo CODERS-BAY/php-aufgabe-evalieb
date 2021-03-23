@@ -5,7 +5,7 @@
    --col2: #f58aba;
    --col3: #1e2761; 
    --col31: #1e2761dc; 
-   --rasberry: #f0d0ec;
+   --raspberry: #f0d0ec;
    --col5: #79a7d3;
    --steal: #b9c7e7;
 }
@@ -23,7 +23,11 @@ body{
     font-family: 'Quicksand', sans-serif;
     background-color: var(--col0);
     align-items: center;
+}
 
+.Horizon main{
+    /* background-image: url('../images/horizon.jpg');
+    height: 100vh; */
 }
 
 span{
@@ -49,8 +53,8 @@ header{
     background-color: var(--horizon);
 }
 
-.Rasberry header{
-    background-color: var(--rasberry);
+.Raspberry header{
+    background-color: var(--raspberry);
 
 }
 
@@ -99,9 +103,21 @@ main{
     justify-content: center;
     margin: 30px 0;
     overflow: auto;
-    /* padding: 40px; */
+    padding: 140px;
     position: relative;
 }
+
+.bgCol{
+    background-color: #ffffff;
+    opacity: 0.7;
+  }
+  
+  div.bgCol p {
+    margin: 5%;
+    font-weight: bold;
+    color:var(--col3);
+  }
+
 
 h2{
     font-size: 150%;
@@ -219,8 +235,8 @@ textarea{
     background-color: var(--horizon);
 }
 
-.Rasberry textarea{
-    background-color: var(--rasberry);
+.Raspberry textarea{
+    background-color: var(--raspberry);
 }
 
 .Steal textarea{
@@ -335,8 +351,8 @@ td > input, td{
     color: var(--col3);
 }
 
-.Rasberry .note_headline{
-    background-color: var(--rasberry);
+.Raspberry .note_headline{
+    background-color: var(--raspberry);
     color: var(--col3);
 }
 

@@ -60,8 +60,8 @@ include_once('inc/dbCon.php');?>
                 </div>
                 <div class="row">
                     <div class="col-6"></div>
-                    <input class="col-1" type="radio" name="team" value="Rasberry" <?php if($_POST['team'] =='Rasberry')echo "checked" ?>>
-                    <label class="col-5" for="rasberry">Team Rasberry</label>
+                    <input class="col-1" type="radio" name="team" value="Raspberry" <?php if($_POST['team'] =='Raspberry')echo "checked" ?>>
+                    <label class="col-5" for="Raspberry">Team Raspberry</label>
                 </div>
                 <div class="row">
                     <div class="col-6"></div>
