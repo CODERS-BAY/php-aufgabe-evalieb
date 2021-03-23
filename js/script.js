@@ -89,17 +89,17 @@ $(document).ready(function(){
         }
     } 
 
-    $('.deleteEmployee').submit(function(event){
-        event.preventDefault();
-        console.log('Mitarbeiter löschen');
-        /*
-        next stepp: formular Daten  holen
-        */
-        let formData = $(this).serialize();
-        deleteEmployee(formData);
-    });
+    $('.delEmp').click(function(){
+        console.log('Employee wird gelöscht<br>');
+        //um später auf den Eintrag zuzugreifen, in eine Variable speichern!
+        //let self = $(this);
+        let entry = $(this).closest('tr');
+        /* über das Objekt und closest zu meiner Data-ID navigieren*/
+        let employee_ID = $(this).closest('tr').attr('data-id');
+        let formData = {'employee_ID' : employee_ID}; //wir bauen uns ein Objekt
+        console.log(employee_ID);
+        console.log(entry);
 
-    function deleteEmployee(formData){
         $.ajax({
             type : 'post', 
             data : formData, 
@@ -108,6 +108,7 @@ $(document).ready(function(){
                 console.log(phpData);
 
                 if(phpData.trim() == 'true'){
+                    entry.remove();
                     location.reload();
                 }
             },
@@ -115,7 +116,7 @@ $(document).ready(function(){
                 console.log(errorMsg);
             }
         });
-    }
+    });
 
     $('.deleteFromTeam').submit(function(event){
         event.preventDefault();
@@ -205,18 +206,45 @@ $(document).ready(function(){
         });
     }
 
-    $('#alterEmployee').submit(function(event){
-        event.preventDefault();
-        console.log('Mitarbeiter bearbeiten');
-        let formdata = $(this).serialize();
-        updateEmployee(formdata);
-    });
+    // $('#alterEmployee').submit(function(event){
+    //     event.preventDefault();
+    //     console.log('Mitarbeiter bearbeiten');
+    //     let formdata = $(this).serialize();
+    //     updateEmployee(formdata);
+    // });
 
-    function updateEmployee(formdata){
+    // function updateEmployee(formdata){
+    //     $.ajax({
+    //         type : 'post',
+    //         data : formdata,
+    //         url: 'sql/updateEmployee.php',
+    //         success : function(phpData){
+    //             console.log(phpData);
+
+    //             if(phpData.trim() == 'true'){
+    //                 // location.reload();
+    //                 console.log("yeah");
+    //             }
+    //         },
+    //         error : function(errorMessage){
+    //             console.log(errorMessage);
+    //             }  
+    //     });
+    // }
+
+    $('.editEmp').click(function(){
+        console.log('Employee wird bearbeitet<br>');
+        let entry = $(this).closest('tr');
+        /* über das Objekt und closest zu meiner Data-ID navigieren*/
+        let employee_ID = $(this).closest('tr').attr('data-id');
+        let formData = {'employee_ID' : employee_ID}; //wir bauen uns ein Objekt
+        console.log(employee_ID);
+        console.log(entry);
+
         $.ajax({
             type : 'post',
-            data : formdata,
-            url: 'sql/updateEmployee.php',
+            data : formData,
+            url: 'updateEmployeeForm.php',
             success : function(phpData){
                 console.log(phpData);
 
@@ -229,7 +257,7 @@ $(document).ready(function(){
                 console.log(errorMessage);
                 }  
         });
-    }
+    });
 
 
 
