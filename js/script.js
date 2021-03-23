@@ -206,45 +206,18 @@ $(document).ready(function(){
         });
     }
 
-    // $('#alterEmployee').submit(function(event){
-    //     event.preventDefault();
-    //     console.log('Mitarbeiter bearbeiten');
-    //     let formdata = $(this).serialize();
-    //     updateEmployee(formdata);
-    // });
+    $('#alterEmployee').submit(function(event){
+        event.preventDefault();
+        console.log('Mitarbeiter bearbeiten');
+        let formdata = $(this).serialize();
+        updateEmployee(formdata);
+    });
 
-    // function updateEmployee(formdata){
-    //     $.ajax({
-    //         type : 'post',
-    //         data : formdata,
-    //         url: 'sql/updateEmployee.php',
-    //         success : function(phpData){
-    //             console.log(phpData);
-
-    //             if(phpData.trim() == 'true'){
-    //                 // location.reload();
-    //                 console.log("yeah");
-    //             }
-    //         },
-    //         error : function(errorMessage){
-    //             console.log(errorMessage);
-    //             }  
-    //     });
-    // }
-
-    $('.editEmp').click(function(){
-        console.log('Employee wird bearbeitet<br>');
-        let entry = $(this).closest('tr');
-        /* über das Objekt und closest zu meiner Data-ID navigieren*/
-        let employee_ID = $(this).closest('tr').attr('data-id');
-        let formData = {'employee_ID' : employee_ID}; //wir bauen uns ein Objekt
-        console.log(employee_ID);
-        console.log(entry);
-
+    function updateEmployee(formdata){
         $.ajax({
             type : 'post',
-            data : formData,
-            url: 'updateEmployeeForm.php',
+            data : formdata,
+            url: 'sql/updateEmployee.php',
             success : function(phpData){
                 console.log(phpData);
 
@@ -257,7 +230,36 @@ $(document).ready(function(){
                 console.log(errorMessage);
                 }  
         });
-    });
+    }
+
+    // $('.editEmp').click(function(){
+    //     console.log('Employee wird bearbeitet<br>');
+    //     let entry = $(this).closest('tr');
+    //     /* über das Objekt und closest zu meiner Data-ID navigieren*/
+    //     let employee_ID = $(this).closest('tr').attr('data-id');
+    //     let formData = {'employee_ID' : employee_ID}; //wir bauen uns ein Objekt
+    //     console.log(employee_ID);
+    //     console.log(entry);
+
+    //     $.ajax({
+    //         type : 'post',
+    //         data : employee_ID,
+    //         url : 'updateEmployeeForm.php',
+
+
+    //         success : function(employee_ID){
+    //             console.log("employee_ID:" + employee_ID);
+
+
+    //             console.log("yess, first part done");
+    //             //window.location = 'updateEmployeeForm.php';
+
+    //         },
+    //         error : function(errorMessage){
+    //             console.log(errorMessage);
+    //             }  
+    //     });
+    // });
 
 
 

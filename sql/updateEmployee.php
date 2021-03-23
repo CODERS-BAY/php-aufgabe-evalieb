@@ -1,7 +1,7 @@
 <?php 
     include_once('../inc/dbCon.php');
 
-    $employeeID = $_POST['employee_ID'];
+    $employeeID = $_POST['employee_id'];
     $employeeUsername = $_POST['username'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
