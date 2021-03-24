@@ -17,6 +17,7 @@
     vertical-align: baseline;
     text-align: center;
     color: var(--col3);
+    line-height: 2;
 }
 
 body{
@@ -170,7 +171,7 @@ select{
     align-self: center;
 }
 
-label{
+label, legend{
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -178,7 +179,13 @@ label{
 fieldset input{
     text-align: left;
     background-color: #1e2761;
+}
 
+input[type='radio'] {
+    cursor: pointer;
+    width: 20px;
+    border: none;
+    box-shadow: none;
 }
 
 .button, input[type="submit"], input[type="edit"] {

@@ -41,53 +41,48 @@ while($datensatz=$result->fetch_assoc()){
             <div>            
                 <fieldset for="rights" >
                     <div class="row">
+                        <div class="col-7"></div>
+                        <input class="col-1" type="radio" name="rights" id="employeeRights" value="employee" <?php if($datensatz['rights_name' ]=='employee')echo "checked" ?>>
+                        <label class="col-4" for="employeeRights">Mitarbeiter*in</label>
+                    </div>
+                    <div class="row">
                         <legend class="col-6">Rechte/Rolle</legend>
-                        <div class="col-6"></div>
+                        <div class="col-1"></div>
+                        <input class="col-1" type="radio" name="rights" id="leadRights" value="lead" <?php if($datensatz['rights_name'] =='lead')echo "checked" ?>>
+                        <label class="col-4" for="leadRights">Teamleiter*in</label>
                     </div>
                     <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="rights" value="employee" <?php if($datensatz['rights_name' ]=='employee')echo "checked" ?>>
-                        <label class="col-5" for="employee">Mitarbeiter*in</label>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="rights" value="lead" <?php if($datensatz['rights_name'] =='lead')echo "checked" ?>>
-                        <label class="col-5" for="lead">Teamleiter*in</label>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="rights" value="admin" <?php if($datensatz['rights_name'] =='admin')echo "checked"?>>
-                        <label class="col-5" for="admin">Admin</label>
+                        <div class="col-7"></div>
+                        <input class="col-1" type="radio" name="rights" id="adminRights" value="admin" <?php if($datensatz['rights_name'] =='admin')echo "checked"?>>
+                        <label class="col-4" for="adminRights">Admin</label>
                     </div>
                 </fieldset>
             </div>
+            <div class="row"></div>
             <div>
                 <fieldset for="team">
                     <div class="row">
+                        <div class="col-7"></div>
+                        <input class="col-1" type="radio" name="team" id="radioHorizon" value="Horizon" <?php if($datensatz['team_name'] =='Horizon')echo "checked" ?>>
+                        <label class="col-4" for="radioHorizon">Team Horizon</label>
+                    </div>
+                    <div class="row">
                         <legend class="col-6">Team</legend>
-                        <div class="col-6"></div>
+                        <div class="col-1"></div>
+                        <input class="col-1" type="radio" name="team" id="radioRaspberry" value="Raspberry" <?php if($datensatz['team_name'] =='Raspberry')echo "checked" ?>>
+                        <label class="col-4" for="radioRaspberry">Team Raspberry</label>
                     </div>
                     <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="team" value="Horizon" <?php if($datensatz['team_name'] =='Horizon')echo "checked" ?>>
-                        <label class="col-5" for="Horizon">Team Horizon</label>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="team" value="Raspberry" <?php if($datensatz['team_name'] =='Raspberry')echo "checked" ?>>
-                        <label class="col-5" for="Raspberry">Team Raspberry</label>
-                    </div>
-                    <div class="row">
-                        <div class="col-6"></div>
-                        <input class="col-1" type="radio" name="team" value="Steal" <?php if($datensatz['team_name'] =='Steal')echo "checked" ?>>
-                        <label class="col-5" for="steal">Team Steal</label>
+                        <div class="col-7"></div>
+                        <input class="col-1" type="radio" name="team" id="radioSteal" value="Steal" <?php if($datensatz['team_name'] =='Steal')echo "checked" ?>>
+                        <label class="col-4" for="radioSteal">Team Steal</label>
                     </div>
                 </fieldset>
                 <input type="hidden" name="employee_id" value="<?php echo $datensatz['employee_ID']?>">
             </div>
             <div class="row">
                 <button type="reset" class="col-5">zurücksetzten</button>
-                <div class="col-1"></div>
+                <div class="col-2"></div>
                 <button type="submit" class="col-5">ändern</button> 
             </div>
         </form>
