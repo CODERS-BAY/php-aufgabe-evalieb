@@ -31,8 +31,7 @@ while($datensatz=$result->fetch_assoc()){
             </div>
             <div class="row">
                 <label for="userpwd" class="col-6">Passwort</label>
-                <!-- MD5 verschlüsselung aufheben.  -->
-                <input type="password" name="userpwd" class="col-6" value="" >
+                <input type="password" name="userpwd" class="col-6">
             </div>
             <div class="row">
                 <label for="email" class="col-6">Email</label>
@@ -76,6 +75,11 @@ while($datensatz=$result->fetch_assoc()){
                         <div class="col-7"></div>
                         <input class="col-1" type="radio" name="team" id="radioSteal" value="Steal" <?php if($datensatz['team_name'] =='Steal')echo "checked" ?>>
                         <label class="col-4" for="radioSteal">Team Steal</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-7"></div>
+                        <input class="col-1" type="radio" name="team" id="noTeam" value="" <?php if($datensatz['team_name'] =='')echo "checked" ?>>
+                        <label class="col-4" for="noTeam">ohne Team</label>
                     </div>
                 </fieldset>
                 <input type="hidden" name="employee_id" value="<?php echo $datensatz['employee_ID']?>">

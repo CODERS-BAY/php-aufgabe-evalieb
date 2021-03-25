@@ -5,9 +5,16 @@
     $employeeUsername = $_POST['username'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
-    // userpwd wird bereits md5 verschlüsselt geschickt
-    //aber was ist, wenn nicht?? also, wenn das PWD neu eingegeben wird?
-    // $userpwd = $_POST['userpwd']; 
+    //das userpwd wird nur upgedatet wenn es neu gesetzt wurde
+    if(isset($_POST['userpwd'])){
+        $userpwd = ($_POST['userpwd']);
+        $update = "UPDATE `employee` SET `employee_pwd` = MD5('$userpwd') WHERE `employee`.`employee_ID` = $employeeID";
+        if($dbcon->query($update)){
+           
+        } else {
+            echo 'passwort konnte nicht geändert werden';
+        }
+    }
     $email = $_POST['email'];
     $rights = $_POST['rights'];
     $team = $_POST['team'];

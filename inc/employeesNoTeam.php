@@ -28,7 +28,7 @@
         while($datensatz=$result->fetch_object()){?>
             <form class="addEmployeeToTeam formular">
                 <tr class='row noBreak'>
-                    <td class='col-2'><input class='inTD' name='user_Name' value="<?php echo $username ?>" disabled></td>
+                    <td class='col-2'><input class='inTD' name='user_Name' value="<?php echo $datensatz->employee_username ?>" disabled></td>
                     <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_firstname ?>" disabled></td>
                     <td class='col-2'><input class='inTD' value="<?php echo $datensatz->employee_lastname ?>" disabled></td>
                     <td class='col-2'><input class='inTD' value="<?php echo $datensatz->rights_name ?>" disabled></td>

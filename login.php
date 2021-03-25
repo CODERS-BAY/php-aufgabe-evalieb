@@ -60,8 +60,7 @@
             else if($_SESSION['rights'] == 'lead'){
                 echo "<h3>Du bist Teamleiter von Team " . $_SESSION['team']?>!</h3>
                     <h3><a href='index.php'>Hier geht's zum Mitarbeiter Bereich</a></h3>
-                    <h3><a href='teamMembers.php'>Hier geht's zu Deinem Team</h3></a>
-                    <h3><a href='employees.php'>Hier geht's zu den freien Mitarbeitern</a></h3>
+                    <h3><a href='teamMembers.php'>Hier geht's zur Mitarbeiterübersicht</h3></a>
             <?php }
             else if ($_SESSION['rights'] == 'admin'){?>
                 <h3>Du bist als <span>admin</span> eingeloggt! <a href='mitarbeiterVerwaltung.php'>Hier geht's zu Deiner Übersicht</a></h3>
