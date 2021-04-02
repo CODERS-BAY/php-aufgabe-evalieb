@@ -1,0 +1,371 @@
+:root{
+    /* colors:  */
+   --col0: #ecebf3;
+   --horizon: #d4e9f8;
+   --col2: #f58aba;
+   --col3: #1e2761; 
+   --col31: #1e2761dc; 
+   --raspberry: #f0d0ec;
+   --col5: #79a7d3;
+   --steal: #b9c7e7;
+}
+*{
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    vertical-align: baseline;
+    text-align: center;
+    color: var(--col3);
+    line-height: 2;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--col0);
+    align-items: center;
+}
+
+.Horizon main{
+    /* background-image: url('../images/horizon.jpg');
+    height: 100vh; */
+}
+
+span{
+    font-weight: 800;
+}
+
+
+div{
+    display: block;
+}
+
+/*-------HEADER-------*/
+
+header{
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    padding: 20px;
+
+}
+.Horizon header{
+    background-color: var(--horizon);
+}
+
+.Raspberry header{
+    background-color: var(--raspberry);
+
+}
+
+.Steal header{
+    background-color: var(--steal);
+}
+
+.admin header{
+    background-color: var(--col2);
+}
+
+header ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header li{
+    list-style: none;
+    padding: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header li a:hover {
+    text-shadow: var(--col31);
+}
+
+li>span{
+    font-weight: 800;
+}
+
+.userimage{
+    height: 35px;
+    border-radius: 50%;
+    width: 35px;
+    background-size: cover;
+    background-position: center;
+}
+
+/*-------MAIN----------*/
+main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;
+    overflow: auto;
+    padding: 140px;
+    position: relative;
+}
+
+.bgCol{
+    background-color: #ffffff;
+    opacity: 0.7;
+  }
+  
+  div.bgCol p {
+    margin: 5%;
+    font-weight: bold;
+    color:var(--col3);
+  }
+
+
+h2{
+    font-size: 150%;
+    margin: 20px auto;
+}
+
+
+/*------- FORM -----------*/
+
+input {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+}
+
+button{
+    background-color: var(--col3);
+    color: var(--col0);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+}
+
+select{
+    background-color: --var(--col0);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 36px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 23px;
+    align-self: center;
+}
+
+label, legend{
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+fieldset input{
+    text-align: left;
+    background-color: #1e2761;
+}
+
+input[type='radio'] {
+    cursor: pointer;
+    width: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+.button, input[type="submit"], input[type="edit"] {
+    color: var(--col0);
+    background-color: var(--col3);
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+
+button:hover .button:hover, input[type="submit"]:hover, input[type="edit"]:hover {
+    background-color: var(--col31);
+    cursor: pointer;
+}
+
+.formular input{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.formular{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 500px;
+    margin: 20px auto;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: 10px;
+}
+
+textarea{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    font-size: 14px;
+    height: calc(100% / 4);
+    line-height: 1.4;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 10px 13px;
+    transition: all .2s ease-in-out;
+    width: 450px;
+    height: 100px;
+}
+
+.Horizon textarea{
+    background-color: var(--horizon);
+}
+
+.Raspberry textarea{
+    background-color: var(--raspberry);
+}
+
+.Steal textarea{
+    background-color: var(--steal);
+}
+
+
+#notes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: -webkit-fill-available;
+}
+
+.note {
+    background-color: #fff;
+    border-color: var(--col3);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px 1px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 10px;
+    width: calc(100% / 4);
+    position: relative;
+}
+
+.note > div {
+    padding: 10px;
+}
+
+.note_text{
+    min-height: 50px;
+}
+
+.note_headline {
+    background-color: #777;
+    color: var(--col0);
+    font-weight: 600;
+    text-align: left;
+}
+
+/* .delete, .edit{
+    position: absolute;
+    top: 0; 
+    right: 0; 
+} */
+label{
+    size: 1.5rem;
+}
+
+caption{
+    size: 3em;
+    margin: 20px; 
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/*----------TABLES--------*/
+
+table{
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    width: 980px;
+    margin-bottom: 20px;
+}
+
+.noBreak{
+    padding: 0; 
+    margin: 0; 
+}
+
+.noBreak > tr > td{
+    padding: 5px; 
+    text-align: left;
+    margin: 0; 
+}
+
+thead{
+    margin: 10px; 
+}
+
+th{
+    text-align: left;
+}
+
+.inTD{
+    padding: 0;
+}
+
+td{
+    font-size: 14px;
+    vertical-align: bottom;
+    height: 40px;
+} 
+
+td > input, td{
+    background-color: inherit;
+    box-shadow: none;
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+    width: 120px;
+}
+
+.editBtn{
+    width: 200px;
+}
+
+.Horizon .note_headline{
+    background-color: var(--horizon);
+    color: var(--col3);
+}
+
+.Raspberry .note_headline{
+    background-color: var(--raspberry);
+    color: var(--col3);
+}
+
+.Steal .note_headline{
+    background-color: var(--steal);
+    color: var(--col3);
+}
+
+
